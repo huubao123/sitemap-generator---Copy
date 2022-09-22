@@ -1,6 +1,9 @@
 const { join } = require('path');
 const { SitemapStream, streamToPromise } = require('sitemap');
 const puppeteer = require('puppeteer');
+var XMLHttpRequest = require('xhr2');
+var xhr = new XMLHttpRequest();
+
 const format = require('xml-formatter');
 const { Readable, addAbortSignal } = require('stream');
 const fs = require('fs');
@@ -67,6 +70,8 @@ if (link) {
         }
         return accumulator;
       }, []);
+      let ContentType = '';
+      const arr = [];
       for (let i = 0; i < update.length; i++) {
         try {
           await page.goto(update[i]);
@@ -127,10 +132,55 @@ if (link) {
 
           resultLists.forEach(async (result) => {
             if ((result.indexOf('http') > -1 || result.indexOf('https') > -1) && result !== '/') {
-              newarray.push(result);
               let index = update.indexOf(result);
               if (index < 0 && result.split('/')[2].indexOf(name) > -1) {
                 update.push(result);
+                try {
+                  var xmlhttp = new XMLHttpRequest();
+                  xmlhttp.open('GET', result, true);
+                  xmlhttp.setRequestHeader('Range', 'bytes=0');
+                  xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == this.DONE) {
+                      const headers = this.getAllResponseHeaders('Content-Type');
+                      arr = headers.trim().split(/[\r\n]+/);
+
+                      // Create a map of header names to values
+                      const headerMap = {};
+                      arr.forEach((line) => {
+                        const parts = line.split(': ');
+                        const header = parts.shift();
+                        const value = parts.join(': ');
+                        headerMap[header] = value;
+                      });
+                      newarray.push({
+                        link: result,
+                        ContentType: headerMap['content-type'] ? headerMap['content-type'] : '',
+                        date: headerMap['date'] ? headerMap['date'] : '',
+                        xcontenttypeoptions: headerMap['x-content-type-options']
+                          ? headerMap['x-content-type-options']
+                          : '',
+                        server: headerMap['server'] ? headerMap['server'] : '',
+                        xframeoptions: headerMap['x-frame-options']
+                          ? headerMap['x-frame-options']
+                          : '',
+                        connection: headerMap['connection'] ? headerMap['connection'] : '',
+                        stricttransportsecurity: headerMap['strict-transport-security']
+                          ? headerMap['strict-transport-security']
+                          : '',
+                        vary: headerMap['vary'] ? headerMap['vary'] : '',
+                        contentlength: headerMap['content-length']
+                          ? headerMap['content-length']
+                          : '',
+                        xxssprotection: headerMap['x-xss-protection']
+                          ? headerMap['x-xss-protection']
+                          : '',
+                      });
+                    }
+                    xmlhttp.send();
+                  };
+                } catch (e) {
+                  ContentType = '';
+                }
               }
             } else if (result !== '/') {
               // await updatedList.push(link + result);
@@ -138,6 +188,52 @@ if (link) {
               let full_link = link + result;
               if (update.indexOf(full_link) < 0 && full_link.split('/')[2].indexOf(name) > -1) {
                 update.push(link + result);
+                try {
+                  var xmlhttp = new XMLHttpRequest();
+                  xmlhttp.open('GET', full_link, true);
+                  xmlhttp.setRequestHeader('Range', 'bytes=0');
+                  xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == this.DONE) {
+                      const headers = this.getAllResponseHeaders('Content-Type');
+                      arr = headers.trim().split(/[\r\n]+/);
+
+                      // Create a map of header names to values
+                      const headerMap = {};
+                      arr.forEach((line) => {
+                        const parts = line.split(': ');
+                        const header = parts.shift();
+                        const value = parts.join(': ');
+                        headerMap[header] = value;
+                      });
+                      newarray.push({
+                        link: result,
+                        ContentType: headerMap['content-type'] ? headerMap['content-type'] : '',
+                        date: headerMap['date'] ? headerMap['date'] : '',
+                        xcontenttypeoptions: headerMap['x-content-type-options']
+                          ? headerMap['x-content-type-options']
+                          : '',
+                        server: headerMap['server'] ? headerMap['server'] : '',
+                        xframeoptions: headerMap['x-frame-options']
+                          ? headerMap['x-frame-options']
+                          : '',
+                        connection: headerMap['connection'] ? headerMap['connection'] : '',
+                        stricttransportsecurity: headerMap['strict-transport-security']
+                          ? headerMap['strict-transport-security']
+                          : '',
+                        vary: headerMap['vary'] ? headerMap['vary'] : '',
+                        contentlength: headerMap['content-length']
+                          ? headerMap['content-length']
+                          : '',
+                        xxssprotection: headerMap['x-xss-protection']
+                          ? headerMap['x-xss-protection']
+                          : '',
+                      });
+                    }
+                    xmlhttp.send();
+                  };
+                } catch (e) {
+                  ContentType = '';
+                }
               }
             }
           });
