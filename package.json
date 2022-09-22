@@ -1,0 +1,28 @@
+{
+  "name": "scrapper",
+  "version": "1.0.0",
+  "description": "a web scraper for sitemap generation",
+  "main": "scrapper.js",
+  "scripts": {
+    "start": "nodemon site.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "web",
+    "scraper",
+    "sitemap",
+    "sitemap",
+    "generator"
+  ],
+  "author": "nachiket",
+  "license": "MIT",
+  "dependencies": {
+    "apify": "^3.0.2",
+    "crawlee": "^3.0.4",
+    "nodemon": "^2.0.19",
+    "puppeteer": "^5.5.0",
+    "request-promise-native": "^1.0.9",
+    "sitemap": "^6.3.3",
+    "xml-formatter": "^2.4.0"
+  }
+}

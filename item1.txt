@@ -1,0 +1,653 @@
+[
+  {
+    "url": "https://mangoads.vn/vn"
+  },
+  {
+    "url": "https://mangoads.vn/learn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/#"
+  },
+  {
+    "url": "https://mangoads.vn/learn/content-marketing/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/digital-advertising/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/digital-advertising/display-advertising/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/digital-advertising/google-ads/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/digital-advertising/programmatic/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/digital-advertising/youtube-advertising/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/seo/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/seo/tu-khoa/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/seo/xay-dung-seo-hieu-qua/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/digital-analytics/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/website-development/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/website-development/design/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/website-development/typography/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/website-development/ux-ui/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/website-development/website-optimization/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/automation/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/ecommerce/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/market-research/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/content-marketing/email-marketing/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/soft-skill/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/#"
+  },
+  {
+    "url": "https://mangoads.vn/vn/ui-ux-design/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/web-redesign/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/web-design-web-development/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/pay-per-click/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/conversion-rate-optimization/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/seo-cho-website/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/seo-for-enterprise/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/content-marketing/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/social-media-marketing/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/email-marketing/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/ecommerce-development/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/contact/"
+  },
+  {
+    "url": "https://mangoads.vn/learn"
+  },
+  {
+    "url": "https://mangoads.vn/learn/automation/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/brand/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/content-marketing/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/digital-advertising/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/digital-analytics/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/ecommerce/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/market-research/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/seo/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/soft-skill/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/website-development/"
+  },
+  {
+    "url": "https://mangoads.vn/learn"
+  },
+  {
+    "url": "https://mangoads.vn/learn/automation/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/brand/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/content-marketing/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/digital-advertising/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/digital-analytics/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/ecommerce/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/market-research/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/seo/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/soft-skill/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/website-development/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cach-tang-ty-le-chuyen-doi-cua-quang-cao-google/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/digital-advertising/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cach-tang-ty-le-chuyen-doi-cua-quang-cao-google/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cach-tang-ty-le-chuyen-doi-cua-quang-cao-google/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/phuongvo/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/vi-sao-quang-cao-google-cua-ban-co-ctr-cao-ma-ty-le-chuyen-doi-van-thap/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/digital-advertising/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/vi-sao-quang-cao-google-cua-ban-co-ctr-cao-ma-ty-le-chuyen-doi-van-thap/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/vi-sao-quang-cao-google-cua-ban-co-ctr-cao-ma-ty-le-chuyen-doi-van-thap/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/phuongvo/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/lam-the-nao-de-cai-dat-google-search-console/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/lam-the-nao-de-cai-dat-google-search-console/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/lam-the-nao-de-cai-dat-google-search-console/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/phuoc-nguyenmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cach-cap-nhat-va-lam-moi-noi-dung-seo-cu-de-tang-traffic/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/seo/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cach-cap-nhat-va-lam-moi-noi-dung-seo-cu-de-tang-traffic/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cach-cap-nhat-va-lam-moi-noi-dung-seo-cu-de-tang-traffic/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/content-outline-la-gi-cach-len-content-outline-cho-bai-viet-chuan-seo/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/trang-chu/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/content-outline-la-gi-cach-len-content-outline-cho-bai-viet-chuan-seo/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/content-outline-la-gi-cach-len-content-outline-cho-bai-viet-chuan-seo/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/phuoc-nguyenmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/20-cach-tang-doanh-so-ecommerce-hieu-qua-thong-qua-seo/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/ecommerce/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/seo/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/20-cach-tang-doanh-so-ecommerce-hieu-qua-thong-qua-seo/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/20-cach-tang-doanh-so-ecommerce-hieu-qua-thong-qua-seo/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/3-chi-so-quan-trong-nhat-ve-core-web-vitals/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/website-development/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/3-chi-so-quan-trong-nhat-ve-core-web-vitals/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/3-chi-so-quan-trong-nhat-ve-core-web-vitals/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/sang-tao-content-marketing-xay-dung-thuong-hieu/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/sang-tao-content-marketing-xay-dung-thuong-hieu/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/sang-tao-content-marketing-xay-dung-thuong-hieu/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/top-30-y-tuong-sang-tao-noi-dung-truyen-thong-mang-xa-hoi-cho-thuong-hieu/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/content-marketing/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/top-30-y-tuong-sang-tao-noi-dung-truyen-thong-mang-xa-hoi-cho-thuong-hieu/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/top-30-y-tuong-sang-tao-noi-dung-truyen-thong-mang-xa-hoi-cho-thuong-hieu/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/bi-quyet-khai-pha-kho-du-lieu-thuong-mai-dien-tu-nam-2021/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/digital-analytics/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/bi-quyet-khai-pha-kho-du-lieu-thuong-mai-dien-tu-nam-2021/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/bi-quyet-khai-pha-kho-du-lieu-thuong-mai-dien-tu-nam-2021/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cach-su-dung-trinh-quan-ly-doanh-nghiep-facebook-2/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/automation/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cach-su-dung-trinh-quan-ly-doanh-nghiep-facebook-2/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cach-su-dung-trinh-quan-ly-doanh-nghiep-facebook-2/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/chung-nhan-cua-google-ads-la-gi-va-tam-quan-trong-cua-no-2/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/chung-nhan-cua-google-ads-la-gi-va-tam-quan-trong-cua-no-2/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/chung-nhan-cua-google-ads-la-gi-va-tam-quan-trong-cua-no-2/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/20-cach-tot-nhat-de-tang-doanh-so-nho-ecommerce-seo-2/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/ecommerce/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/20-cach-tot-nhat-de-tang-doanh-so-nho-ecommerce-seo-2/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/20-cach-tot-nhat-de-tang-doanh-so-nho-ecommerce-seo-2/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/chien-luoc-xay-dung-brand-cua-tuong-dai-thoi-trang-xa-xi-hermes/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/brand/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/chien-luoc-xay-dung-brand-cua-tuong-dai-thoi-trang-xa-xi-hermes/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/chien-luoc-xay-dung-brand-cua-tuong-dai-thoi-trang-xa-xi-hermes/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/bi-quyet-thanh-cong-cua-thuong-hieu-starbucks/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/brand/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/bi-quyet-thanh-cong-cua-thuong-hieu-starbucks/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/bi-quyet-thanh-cong-cua-thuong-hieu-starbucks/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cap-nhat-8-xu-huong-seo-moi-nhat-2021/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/seo/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cap-nhat-8-xu-huong-seo-moi-nhat-2021/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cap-nhat-8-xu-huong-seo-moi-nhat-2021/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/top-10-xu-huong-thiet-ke-ui-ux-cho-mobile-app-2021/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/website-development/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/top-10-xu-huong-thiet-ke-ui-ux-cho-mobile-app-2021/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/top-10-xu-huong-thiet-ke-ui-ux-cho-mobile-app-2021/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/nhung-dieu-ban-can-biet-ve-keyword-search-volume/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/seo/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/nhung-dieu-ban-can-biet-ve-keyword-search-volume/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/nhung-dieu-ban-can-biet-ve-keyword-search-volume/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/diem-chat-luong-trong-google-ads-co-con-la-chi-so-quan-trong-trong-nam-2021/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/digital-advertising/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/diem-chat-luong-trong-google-ads-co-con-la-chi-so-quan-trong-trong-nam-2021/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/diem-chat-luong-trong-google-ads-co-con-la-chi-so-quan-trong-trong-nam-2021/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/nhung-phuong-phap-tao-chien-dich-facebook-ad-thanh-cong/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/digital-advertising/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/nhung-phuong-phap-tao-chien-dich-facebook-ad-thanh-cong/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/nhung-phuong-phap-tao-chien-dich-facebook-ad-thanh-cong/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cach-len-ke-hoach-content-hieu-qua-nhat-2021/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/content-marketing/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cach-len-ke-hoach-content-hieu-qua-nhat-2021/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cach-len-ke-hoach-content-hieu-qua-nhat-2021/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/5-cach-xay-dung-bai-viet-hap-dan-tu-cai-nhin-dau-tien/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/content-marketing/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/5-cach-xay-dung-bai-viet-hap-dan-tu-cai-nhin-dau-tien/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/5-cach-xay-dung-bai-viet-hap-dan-tu-cai-nhin-dau-tien/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/bat-mi-cac-tips-tao-chien-dich-email-marketing-thanh-cong/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/content-marketing/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/bat-mi-cac-tips-tao-chien-dich-email-marketing-thanh-cong/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/bat-mi-cac-tips-tao-chien-dich-email-marketing-thanh-cong/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cach-do-luong-va-thu-thuat-gia-tang-thi-phan-huu-hieu/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/market-research/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cach-do-luong-va-thu-thuat-gia-tang-thi-phan-huu-hieu/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/cach-do-luong-va-thu-thuat-gia-tang-thi-phan-huu-hieu/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/author/2-vmangoads-vn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/page/2/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/page/3/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/page/18/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/page/2/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/tel:"
+  },
+  {
+    "url": "https://mangoads.vn/learn/+84"
+  },
+  {
+    "url": "https://mangoads.vn/learn/28"
+  },
+  {
+    "url": "https://mangoads.vn/learn/6680"
+  },
+  {
+    "url": "https://mangoads.vn/learn/5450"
+  },
+  {
+    "url": "https://mangoads.vn/learn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/about-us/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/about-us/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/web-design-web-development/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/seo-cho-website/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/pay-per-click/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/ecommerce-development/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/recruit/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/recruit/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/contact/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/contact/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/#"
+  },
+  {
+    "url": "https://mangoads.vn/learn/tel:"
+  },
+  {
+    "url": "https://mangoads.vn/learn/+84"
+  },
+  {
+    "url": "https://mangoads.vn/learn/28"
+  },
+  {
+    "url": "https://mangoads.vn/learn/6680"
+  },
+  {
+    "url": "https://mangoads.vn/learn/5450"
+  },
+  {
+    "url": "https://mangoads.vn/learn/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/about-us/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/about-us/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/web-design-web-development/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/seo-cho-website/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/pay-per-click/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/ecommerce-development/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/recruit/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/recruit/"
+  },
+  {
+    "url": "https://mangoads.vn/learn/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/contact/"
+  },
+  {
+    "url": "https://mangoads.vn/vn/contact/"
+  }
+]
