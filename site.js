@@ -7,8 +7,8 @@ var xhr = new XMLHttpRequest();
 const format = require('xml-formatter');
 const { Readable, addAbortSignal } = require('stream');
 const fs = require('fs');
-const link = 'https://www.tfsvn.com.vn/';
-const name = link.split('/')[2].replace('www.', '');
+const link = 'https://www.tfsvn.com.vn';
+const name = link.replace('www.', '');
 if (!link) {
   console.log('please provide a valid link');
 }
@@ -57,10 +57,12 @@ if (link) {
       resultList = resultList.slice(2);
       const updatedList = [];
       resultList.forEach(async (result) => {
-        if (result.indexOf('http') > -1 || result.indexOf('https') > -1) {
-          await updatedList.push(result);
+        if (result.indexOf(name) > -1) {
+          updatedList.push(result);
         } else if (result !== '/') {
-          await updatedList.push(link + result);
+          updatedList.push(link + '/' + result);
+        } else {
+          updatedList.push(link + result);
         }
       });
       const newarray = new Array();
@@ -94,7 +96,7 @@ if (link) {
                 node.content.indexOf('http') > -1 ||
                 node.content.indexOf('https') > -1
               ) {
-                if (node.href.split('/')[2].indexOf(name) > -1) {
+                if (node.href.indexOf(name) > -1) {
                   await hrefLinks.push(node);
                 }
               }
@@ -106,7 +108,7 @@ if (link) {
                 node.content.indexOf('http') > -1 ||
                 node.content.indexOf('https') > -1
               ) {
-                if (node.href.split('/')[2].indexOf(name) > -1) {
+                if (node.href.indexOf(name) > -1) {
                   await hrefLinks.push(node);
                 }
               }
@@ -133,107 +135,112 @@ if (link) {
           resultLists.forEach(async (result) => {
             if ((result.indexOf('http') > -1 || result.indexOf('https') > -1) && result !== '/') {
               let index = update.indexOf(result);
-              if (index < 0 && result.split('/')[2].indexOf(name) > -1) {
+              if (index < 0 && result.indexOf(name) > -1) {
                 update.push(result);
-                try {
-                  var xmlhttp = new XMLHttpRequest();
-                  xmlhttp.open('GET', result, true);
-                  xmlhttp.setRequestHeader('Range', 'bytes=0');
-                  xmlhttp.onreadystatechange = function () {
-                    if (this.readyState == this.DONE) {
-                      const headers = this.getAllResponseHeaders('Content-Type');
-                      arr = headers.trim().split(/[\r\n]+/);
+                // try {
+                //   var xmlhttp = new XMLHttpRequest();
+                //   xmlhttp.open('GET', result, true);
+                //   xmlhttp.setRequestHeader('Range', 'bytes=0');
+                //   xmlhttp.onreadystatechange = function () {
+                //     if (this.readyState == this.DONE) {
+                //       const headers = this.getAllResponseHeaders('Content-Type');
+                //       arr = headers.trim().split(/[\r\n]+/);
 
-                      // Create a map of header names to values
-                      const headerMap = {};
-                      arr.forEach((line) => {
-                        const parts = line.split(': ');
-                        const header = parts.shift();
-                        const value = parts.join(': ');
-                        headerMap[header] = value;
-                      });
-                      newarray.push({
-                        link: result,
-                        ContentType: headerMap['content-type'] ? headerMap['content-type'] : '',
-                        date: headerMap['date'] ? headerMap['date'] : '',
-                        xcontenttypeoptions: headerMap['x-content-type-options']
-                          ? headerMap['x-content-type-options']
-                          : '',
-                        server: headerMap['server'] ? headerMap['server'] : '',
-                        xframeoptions: headerMap['x-frame-options']
-                          ? headerMap['x-frame-options']
-                          : '',
-                        connection: headerMap['connection'] ? headerMap['connection'] : '',
-                        stricttransportsecurity: headerMap['strict-transport-security']
-                          ? headerMap['strict-transport-security']
-                          : '',
-                        vary: headerMap['vary'] ? headerMap['vary'] : '',
-                        contentlength: headerMap['content-length']
-                          ? headerMap['content-length']
-                          : '',
-                        xxssprotection: headerMap['x-xss-protection']
-                          ? headerMap['x-xss-protection']
-                          : '',
-                      });
-                    }
-                    xmlhttp.send();
-                  };
-                } catch (e) {
-                  ContentType = '';
-                }
+                //       // Create a map of header names to values
+                //       const headerMap = {};
+                //       arr.forEach((line) => {
+                //         const parts = line.split(': ');
+                //         const header = parts.shift();
+                //         const value = parts.join(': ');
+                //         headerMap[header] = value;
+                //       });
+                //       newarray.push({
+                //         link: result,
+                //         ContentType: headerMap['content-type'] ? headerMap['content-type'] : '',
+                //         date: headerMap['date'] ? headerMap['date'] : '',
+                //         xcontenttypeoptions: headerMap['x-content-type-options']
+                //           ? headerMap['x-content-type-options']
+                //           : '',
+                //         server: headerMap['server'] ? headerMap['server'] : '',
+                //         xframeoptions: headerMap['x-frame-options']
+                //           ? headerMap['x-frame-options']
+                //           : '',
+                //         connection: headerMap['connection'] ? headerMap['connection'] : '',
+                //         stricttransportsecurity: headerMap['strict-transport-security']
+                //           ? headerMap['strict-transport-security']
+                //           : '',
+                //         vary: headerMap['vary'] ? headerMap['vary'] : '',
+                //         contentlength: headerMap['content-length']
+                //           ? headerMap['content-length']
+                //           : '',
+                //         xxssprotection: headerMap['x-xss-protection']
+                //           ? headerMap['x-xss-protection']
+                //           : '',
+                //       });
+                //     }
+                //     xmlhttp.send();
+                //   };
+                // } catch (e) {
+                //   ContentType = '';
+                // }
               }
             } else if (result !== '/') {
               // await updatedList.push(link + result);
-              newarray.push(link + result);
-              let full_link = link + result;
-              if (update.indexOf(full_link) < 0 && full_link.split('/')[2].indexOf(name) > -1) {
+              // newarray.push(link + result);
+              let full_link = link + '/' + result;
+              if (update.indexOf(full_link) < 0 && full_link.indexOf(name) > -1) {
                 update.push(link + result);
-                try {
-                  var xmlhttp = new XMLHttpRequest();
-                  xmlhttp.open('GET', full_link, true);
-                  xmlhttp.setRequestHeader('Range', 'bytes=0');
-                  xmlhttp.onreadystatechange = function () {
-                    if (this.readyState == this.DONE) {
-                      const headers = this.getAllResponseHeaders('Content-Type');
-                      arr = headers.trim().split(/[\r\n]+/);
+                // try {
+                //   var xmlhttp = new XMLHttpRequest();
+                //   xmlhttp.open('GET', full_link, true);
+                //   xmlhttp.setRequestHeader('Range', 'bytes=0');
+                //   xmlhttp.onreadystatechange = function () {
+                //     if (this.readyState == this.DONE) {
+                //       const headers = this.getAllResponseHeaders('Content-Type');
+                //       arr = headers.trim().split(/[\r\n]+/);
 
-                      // Create a map of header names to values
-                      const headerMap = {};
-                      arr.forEach((line) => {
-                        const parts = line.split(': ');
-                        const header = parts.shift();
-                        const value = parts.join(': ');
-                        headerMap[header] = value;
-                      });
-                      newarray.push({
-                        link: result,
-                        ContentType: headerMap['content-type'] ? headerMap['content-type'] : '',
-                        date: headerMap['date'] ? headerMap['date'] : '',
-                        xcontenttypeoptions: headerMap['x-content-type-options']
-                          ? headerMap['x-content-type-options']
-                          : '',
-                        server: headerMap['server'] ? headerMap['server'] : '',
-                        xframeoptions: headerMap['x-frame-options']
-                          ? headerMap['x-frame-options']
-                          : '',
-                        connection: headerMap['connection'] ? headerMap['connection'] : '',
-                        stricttransportsecurity: headerMap['strict-transport-security']
-                          ? headerMap['strict-transport-security']
-                          : '',
-                        vary: headerMap['vary'] ? headerMap['vary'] : '',
-                        contentlength: headerMap['content-length']
-                          ? headerMap['content-length']
-                          : '',
-                        xxssprotection: headerMap['x-xss-protection']
-                          ? headerMap['x-xss-protection']
-                          : '',
-                      });
-                    }
-                    xmlhttp.send();
-                  };
-                } catch (e) {
-                  ContentType = '';
-                }
+                //       // Create a map of header names to values
+                //       const headerMap = {};
+                //       arr.forEach((line) => {
+                //         const parts = line.split(': ');
+                //         const header = parts.shift();
+                //         const value = parts.join(': ');
+                //         headerMap[header] = value;
+                //       });
+                //       newarray.push({
+                //         link: result,
+                //         ContentType: headerMap['content-type'] ? headerMap['content-type'] : '',
+                //         date: headerMap['date'] ? headerMap['date'] : '',
+                //         xcontenttypeoptions: headerMap['x-content-type-options']
+                //           ? headerMap['x-content-type-options']
+                //           : '',
+                //         server: headerMap['server'] ? headerMap['server'] : '',
+                //         xframeoptions: headerMap['x-frame-options']
+                //           ? headerMap['x-frame-options']
+                //           : '',
+                //         connection: headerMap['connection'] ? headerMap['connection'] : '',
+                //         stricttransportsecurity: headerMap['strict-transport-security']
+                //           ? headerMap['strict-transport-security']
+                //           : '',
+                //         vary: headerMap['vary'] ? headerMap['vary'] : '',
+                //         contentlength: headerMap['content-length']
+                //           ? headerMap['content-length']
+                //           : '',
+                //         xxssprotection: headerMap['x-xss-protection']
+                //           ? headerMap['x-xss-protection']
+                //           : '',
+                //       });
+                //     }
+                //     xmlhttp.send();
+                //   };
+                // } catch (e) {
+                //   ContentType = '';
+                // }
+              }
+            } else {
+              full_link = link + result;
+              if (update.indexOf(full_link) < 0 && full_link.indexOf(name) > -1) {
+                update.push(link + result);
               }
             }
           });
@@ -242,14 +249,13 @@ if (link) {
           });
         } catch (e) {}
       }
-      console.log(update);
       let myArrayWithNoDuplicates = update.reduce(function (accumulator, element) {
         if (accumulator.indexOf(element) === -1) {
           accumulator.push(element);
         }
         return accumulator;
       }, []);
-      fs.writeFile('item.txt', JSON.stringify(myArrayWithNoDuplicates, null, 2), (err) => {
+      fs.writeFile('item1.txt', JSON.stringify(myArrayWithNoDuplicates, null, 2), (err) => {
         if (err) throw err;
         console.log('The file has been saved!');
       });
