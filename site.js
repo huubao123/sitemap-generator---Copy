@@ -7,7 +7,7 @@ const request = require('request');
 const format = require('xml-formatter');
 const { Readable, addAbortSignal } = require('stream');
 const fs = require('fs');
-const link = 'https://www.agribank.com.vn';
+const link = 'https://shokz.com';
 const name = link.replace('www.', '');
 if (!link) {
   console.log('please provide a valid link');
