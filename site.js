@@ -1,13 +1,13 @@
 const { join } = require('path');
 const { SitemapStream, streamToPromise } = require('sitemap');
 const puppeteer = require('puppeteer');
-var XMLHttpRequest = require('xhr2');
-var xhr = new XMLHttpRequest();
+const XMLHttpRequest = require('xhr2');
+const request = require('request');
 
 const format = require('xml-formatter');
 const { Readable, addAbortSignal } = require('stream');
 const fs = require('fs');
-const link = 'https://www.tfsvn.com.vn';
+const link = 'https://www.agribank.com.vn';
 const name = link.replace('www.', '');
 if (!link) {
   console.log('please provide a valid link');
@@ -16,19 +16,19 @@ if (link) {
   try {
     (async () => {
       const browser = await puppeteer.launch({
-        headless: false,
-        defaultViewport: null,
-        args: ['--start-maximized'],
-        product: 'chrome',
+        // headless: false,
+        // defaultViewport: null,
+        // args: ['--start-maximized'],
+        // product: 'chrome',
         // devtools: true,
-        executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
+        // executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
       });
       const page = await browser.newPage();
       await page.setViewport({ width: 1280, height: 800 });
       await page.goto(link);
       const pageContent = await page.content();
       await Promise.all([
-        page.waitForNavigation({ waitUntil: 'networkidle0' }),
+        page.waitForNavigation({ waitUntil: 'load' }),
         page.evaluate(() => history.pushState(null, null, null)),
       ]);
       const result = await page.evaluateHandle(() => {
@@ -56,7 +56,7 @@ if (link) {
       let resultList = await modifiedResult.toString().split(' ');
       resultList = resultList.slice(2);
       const updatedList = [];
-      resultList.forEach(async (result) => {
+      resultList.forEach((result) => {
         if (result.indexOf(name) > -1) {
           updatedList.push(result);
         } else if (result !== '/') {
@@ -65,23 +65,47 @@ if (link) {
           updatedList.push(link + result);
         }
       });
-      const newarray = new Array();
+      let newarray = new Array();
       let update = updatedList.reduce(function (accumulator, element) {
         if (accumulator.indexOf(element) === -1) {
           accumulator.push(element);
         }
         return accumulator;
       }, []);
-      let ContentType = '';
-      const arr = [];
       for (let i = 0; i < update.length; i++) {
         try {
+          let element = {};
           await page.goto(update[i]);
-          console.log(i);
           await Promise.all([
-            page.waitForNavigation({ waitUntil: 'networkidle0' }),
+            page.waitForNavigation({ waitUntil: 'load' }),
             page.evaluate(() => history.pushState(null, null, null)),
           ]);
+          const getvalue = await page.evaluate(() => {
+            let data = {
+              title: document.querySelector('title').innerText
+                ? document.querySelector('title').innerText
+                : '',
+              description: document.querySelectorAll('meta[name= "description"]')[0].content
+                ? document.querySelectorAll('meta[name= "description"]')[0].content
+                : '',
+            };
+            return data;
+          });
+          request(update[i], async function (error, response, body) {
+            //statusCode:
+            newarray.push({
+              title: getvalue.title,
+              description: getvalue.description,
+              statusCode: response.statusCode ? response.statusCode : '',
+            });
+
+            //await Object.assign(element, { key3: 'value3' });
+            //console.error('error:', error); // Print the error if one occurred
+            // console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+            //console.log('body:', body); // Print the HTML for the Google homepage.
+          });
+
+          console.log(newarray);
           const results = await page.evaluateHandle(() => {
             const hrefLinks = [];
             document.querySelectorAll('a').forEach(async (selector) => {
@@ -108,7 +132,11 @@ if (link) {
                 node.content.indexOf('http') > -1 ||
                 node.content.indexOf('https') > -1
               ) {
-                if (node.href.indexOf(name) > -1) {
+                if (
+                  node.href.indexOf(name) > -1 ||
+                  node.src.indexOf(name) > -1 ||
+                  node.content.indexOf(name) > -1
+                ) {
                   await hrefLinks.push(node);
                 }
               }
@@ -133,119 +161,37 @@ if (link) {
           resultLists = resultLists.slice(2);
 
           resultLists.forEach(async (result) => {
-            if ((result.indexOf('http') > -1 || result.indexOf('https') > -1) && result !== '/') {
+            if (result.indexOf(name) > -1) {
               let index = update.indexOf(result);
-              if (index < 0 && result.indexOf(name) > -1) {
+              if (index < 0) {
                 update.push(result);
-                // try {
-                //   var xmlhttp = new XMLHttpRequest();
-                //   xmlhttp.open('GET', result, true);
-                //   xmlhttp.setRequestHeader('Range', 'bytes=0');
-                //   xmlhttp.onreadystatechange = function () {
-                //     if (this.readyState == this.DONE) {
-                //       const headers = this.getAllResponseHeaders('Content-Type');
-                //       arr = headers.trim().split(/[\r\n]+/);
 
-                //       // Create a map of header names to values
-                //       const headerMap = {};
-                //       arr.forEach((line) => {
-                //         const parts = line.split(': ');
-                //         const header = parts.shift();
-                //         const value = parts.join(': ');
-                //         headerMap[header] = value;
-                //       });
-                //       newarray.push({
-                //         link: result,
-                //         ContentType: headerMap['content-type'] ? headerMap['content-type'] : '',
-                //         date: headerMap['date'] ? headerMap['date'] : '',
-                //         xcontenttypeoptions: headerMap['x-content-type-options']
-                //           ? headerMap['x-content-type-options']
-                //           : '',
-                //         server: headerMap['server'] ? headerMap['server'] : '',
-                //         xframeoptions: headerMap['x-frame-options']
-                //           ? headerMap['x-frame-options']
-                //           : '',
-                //         connection: headerMap['connection'] ? headerMap['connection'] : '',
-                //         stricttransportsecurity: headerMap['strict-transport-security']
-                //           ? headerMap['strict-transport-security']
-                //           : '',
-                //         vary: headerMap['vary'] ? headerMap['vary'] : '',
-                //         contentlength: headerMap['content-length']
-                //           ? headerMap['content-length']
-                //           : '',
-                //         xxssprotection: headerMap['x-xss-protection']
-                //           ? headerMap['x-xss-protection']
-                //           : '',
-                //       });
-                //     }
-                //     xmlhttp.send();
-                //   };
-                // } catch (e) {
-                //   ContentType = '';
-                // }
+                try {
+                } catch (e) {
+                  console.log(e);
+                }
               }
             } else if (result !== '/') {
               // await updatedList.push(link + result);
               // newarray.push(link + result);
               let full_link = link + '/' + result;
-              if (update.indexOf(full_link) < 0 && full_link.indexOf(name) > -1) {
-                update.push(link + result);
-                // try {
-                //   var xmlhttp = new XMLHttpRequest();
-                //   xmlhttp.open('GET', full_link, true);
-                //   xmlhttp.setRequestHeader('Range', 'bytes=0');
-                //   xmlhttp.onreadystatechange = function () {
-                //     if (this.readyState == this.DONE) {
-                //       const headers = this.getAllResponseHeaders('Content-Type');
-                //       arr = headers.trim().split(/[\r\n]+/);
-
-                //       // Create a map of header names to values
-                //       const headerMap = {};
-                //       arr.forEach((line) => {
-                //         const parts = line.split(': ');
-                //         const header = parts.shift();
-                //         const value = parts.join(': ');
-                //         headerMap[header] = value;
-                //       });
-                //       newarray.push({
-                //         link: result,
-                //         ContentType: headerMap['content-type'] ? headerMap['content-type'] : '',
-                //         date: headerMap['date'] ? headerMap['date'] : '',
-                //         xcontenttypeoptions: headerMap['x-content-type-options']
-                //           ? headerMap['x-content-type-options']
-                //           : '',
-                //         server: headerMap['server'] ? headerMap['server'] : '',
-                //         xframeoptions: headerMap['x-frame-options']
-                //           ? headerMap['x-frame-options']
-                //           : '',
-                //         connection: headerMap['connection'] ? headerMap['connection'] : '',
-                //         stricttransportsecurity: headerMap['strict-transport-security']
-                //           ? headerMap['strict-transport-security']
-                //           : '',
-                //         vary: headerMap['vary'] ? headerMap['vary'] : '',
-                //         contentlength: headerMap['content-length']
-                //           ? headerMap['content-length']
-                //           : '',
-                //         xxssprotection: headerMap['x-xss-protection']
-                //           ? headerMap['x-xss-protection']
-                //           : '',
-                //       });
-                //     }
-                //     xmlhttp.send();
-                //   };
-                // } catch (e) {
-                //   ContentType = '';
-                // }
+              if (update.indexOf(full_link) < 0) {
+                update.push(full_link);
               }
             } else {
-              full_link = link + result;
-              if (update.indexOf(full_link) < 0 && full_link.indexOf(name) > -1) {
-                update.push(link + result);
+              full_link = link + '/' + result;
+              if (update.indexOf(full_link) < 0) {
+                update.push(full_link);
               }
             }
           });
+
           fs.writeFile('item.txt', JSON.stringify(update, null, 2), (err) => {
             if (err) throw err;
+          });
+          fs.writeFile('item2.txt', JSON.stringify(newarray, null, 2), (err) => {
+            if (err) throw err;
+            console.log('The file has been saved!');
           });
         } catch (e) {}
       }
