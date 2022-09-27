@@ -16,12 +16,12 @@ if (link) {
   try {
     (async () => {
       const browser = await puppeteer.launch({
-        // headless: false,
-        // defaultViewport: null,
-        // args: ['--start-maximized'],
-        // product: 'chrome',
-        // devtools: true,
-        // executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
+        headless: false,
+        defaultViewport: null,
+        args: ['--start-maximized'],
+        product: 'chrome',
+        devtools: true,
+        executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
       });
       const page = await browser.newPage();
       await page.setViewport({ width: 1280, height: 800 });
@@ -74,8 +74,8 @@ if (link) {
       }, []);
       for (let i = 0; i < update.length; i++) {
         try {
-          let element = {};
           await page.goto(update[i]);
+          console.log(i);
           await Promise.all([
             page.waitForNavigation({ waitUntil: 'load' }),
             page.evaluate(() => history.pushState(null, null, null)),
@@ -85,15 +85,29 @@ if (link) {
               title: document.querySelector('title').innerText
                 ? document.querySelector('title').innerText
                 : '',
-              description: document.querySelectorAll('meta[name= "description"]')[0].content
-                ? document.querySelectorAll('meta[name= "description"]')[0].content
+              description: document.querySelector('meta[name="description"]')
+                ? document.querySelector('meta[name="description"]').content
                 : '',
+              robots: document.querySelector('meta[name="robots"]')
+                ? document.querySelector('meta[name="robots"]').content
+                : '',
+              canonical: document.querySelector('meta[name="canonical"]')
+                ? document.querySelector('meta[name="canonical"]').href
+                : '',
+              h1: document.querySelector('h1') ? document.querySelector('h1').innerText : '',
+              h2: document.querySelector('h2') ? document.querySelector('h2').innerText : '',
             };
             return data;
           });
-          request(update[i], async function (error, response, body) {
+          console.log(getvalue);
+          request(update[i], function (error, response, body) {
             //statusCode:
             newarray.push({
+              link: update[i],
+              robots: getvalue.robots,
+              canonical: getvalue.canonical,
+              h1: getvalue.h1,
+              h2: getvalue.h2,
               title: getvalue.title,
               description: getvalue.description,
               statusCode: response.statusCode ? response.statusCode : '',
