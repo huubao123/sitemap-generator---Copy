@@ -7,7 +7,7 @@ const fastcsv = require('fast-csv');
 const fs = require('fs');
 const ws = fs.createWriteStream('out.csv');
 
-const link = 'https://shokz.com';
+const link = 'https://shokz.com.vn';
 const name = link.replace('www.', '');
 if (!link) {
   console.log('please provide a valid link');
@@ -103,10 +103,10 @@ if (link) {
             }
 
             let data = {
-              title: document.querySelector('title').innerText
+              title: document.querySelector('title')
                 ? document.querySelector('title').innerText
                 : '',
-              description: document.querySelector('meta[name="description"]')
+              description: document.querySelector('meta[name="description"]') 
                 ? document.querySelector('meta[name="description"]').content
                 : '',
               robots: document.querySelector('meta[name="robots"]')
@@ -166,10 +166,9 @@ if (link) {
               if (
                 node.href ||
                 node.src ||
-                node.content.indexOf('http') > -1 ||
-                node.content.indexOf('https') > -1
+                node.content
               ) {
-                if (node.href.indexOf(name) > -1) {
+                if (node.href.indexOf(name) > -1||node.src.indexOf(name) > -1||node.content.indexOf(name) > -1) {
                   await hrefLinks.push(node);
                 }
               }
@@ -178,8 +177,7 @@ if (link) {
               if (
                 node.href ||
                 node.src ||
-                node.content.indexOf('http') > -1 ||
-                node.content.indexOf('https') > -1
+                node.content
               ) {
                 if (
                   node.href.indexOf(name) > -1 ||
