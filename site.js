@@ -183,7 +183,6 @@ if (link) {
               
               ) {
                   await hrefLinks.push(node.href);
-                
               }
               if (
                 node.src
