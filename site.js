@@ -16,12 +16,12 @@ if (link) {
   try {
     (async () => {
       const browser = await puppeteer.launch({
-        headless: false,
-        defaultViewport: null,
-        args: ['--start-maximized'],
-        product: 'chrome',
-        devtools: true,
-        executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
+        // headless: false,
+        // defaultViewport: null,
+        // args: ['--start-maximized'],
+        // product: 'chrome',
+        // devtools: true,
+        // executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
       });
       const page = await browser.newPage();
       await page.setViewport({ width: 1280, height: 800 });
@@ -81,6 +81,25 @@ if (link) {
             page.evaluate(() => history.pushState(null, null, null)),
           ]);
           const getvalue = await page.evaluate(() => {
+            let h1 = new Array();
+            let h2 = new Array();
+            let h11 = document.querySelectorAll('h1');
+            if (h11) {
+              for (let j = 0; j < h11.length; j++) {
+                h1.push({
+                  h1: h11[i].innerText ? h11[i].innerHTML : '',
+                });
+              }
+            }
+            let h22 = document.querySelectorAll('h2');
+            if (h22) {
+              for (let j = 0; j < h22.length; j++) {
+                h2.push({
+                  h2: h22[i].innerText ? h22[i].innerHTML : '',
+                });
+              }
+            }
+
             let data = {
               title: document.querySelector('title').innerText
                 ? document.querySelector('title').innerText
@@ -94,18 +113,25 @@ if (link) {
               canonical: document.querySelector('meta[name="canonical"]')
                 ? document.querySelector('meta[name="canonical"]').href
                 : '',
-              h1: document.querySelector('h1') ? document.querySelector('h1').innerText : '',
-              h2: document.querySelector('h2') ? document.querySelector('h2').innerText : '',
+              h1: h1 ? h1 : [],
+              h2: h2 ? h2 : [],
             };
             return data;
           });
-          console.log(getvalue);
           request(update[i], function (error, response, body) {
             //statusCode:
+            let h1 = {};
+            for (let i = 0; i < getvalue.h1.length; i++) {
+              h1 = {
+                ['h1' + i]: getvalue.h1[i] ? getvalue.h1[i] : '',
+              };
+            }
+            console.log(h1);
             newarray.push({
               link: update[i],
               robots: getvalue.robots,
               canonical: getvalue.canonical,
+              h1: getvalue.h1,
               h1: getvalue.h1,
               h2: getvalue.h2,
               title: getvalue.title,
@@ -119,7 +145,6 @@ if (link) {
             //console.log('body:', body); // Print the HTML for the Google homepage.
           });
 
-          console.log(newarray);
           const results = await page.evaluateHandle(() => {
             const hrefLinks = [];
             document.querySelectorAll('a').forEach(async (selector) => {
