@@ -164,28 +164,33 @@ if (link) {
             });
             document.getElementsByTagName('body')[0].childNodes.forEach(async (node) => {
               if (
-                node.href ||
-                node.src ||
-                node.content
+                node.href
               ) {
-                if (node.href.indexOf(name) > -1||node.src.indexOf(name) > -1||node.content.indexOf(name) > -1) {
-                  await hrefLinks.push(node);
+                  await hrefLinks.push(node.href);
                 }
+              
+              if (
+                node.src
+              
+              ) {
+                  await hrefLinks.push(node.src);
+                
               }
             });
             document.getElementsByTagName('head')[0].childNodes.forEach(async (node) => {
               if (
-                node.href ||
-                node.src ||
-                node.content
+                node.href
+              
               ) {
-                if (
-                  node.href.indexOf(name) > -1 ||
-                  node.src.indexOf(name) > -1 ||
-                  node.content.indexOf(name) > -1
-                ) {
-                  await hrefLinks.push(node);
-                }
+                  await hrefLinks.push(node.href);
+                
+              }
+              if (
+                node.src
+              
+              ) {
+                  await hrefLinks.push(node.src);
+                
               }
             });
 
@@ -206,8 +211,10 @@ if (link) {
             });
           let resultLists = modifiedResults.toString().split(' ');
           resultLists = resultLists.slice(2);
-
+console.log('a')
           resultLists.forEach(async (result) => {
+            
+            console.log(result)
             let res = result.replace('#','')
             if (res.indexOf(name) > -1) {
               let index = update.indexOf(res);
@@ -228,7 +235,7 @@ if (link) {
               }
             } else {
               full_link = link + '/' + res;
-              if (update.indexOf(full_link) < 0) {
+              if (update.indexOf(full_link) < 0 && full_link.indexOf(name)>-1) {
                 update.push(full_link);
               }
             }
