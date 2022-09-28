@@ -19,10 +19,13 @@
   "dependencies": {
     "apify": "^3.0.2",
     "crawlee": "^3.0.4",
+    "fast-csv": "^4.3.6",
     "nodemon": "^2.0.19",
     "puppeteer": "^5.5.0",
+    "request": "^2.88.2",
     "request-promise-native": "^1.0.9",
     "sitemap": "^6.3.3",
+    "xhr2": "^0.2.1",
     "xml-formatter": "^2.4.0"
   }
 }
